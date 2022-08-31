@@ -1,45 +1,57 @@
-let s:mappingsState=1
-let s:is_startup=1
+let s:is_on=1
 
-function! ToggleNorwegianKeys()
-	if s:mappingsState
-		" Map "Øø" to escape
+function! ToggleNorwegianKeys(silence)
+    " Toggle keys
+	if s:is_on
+		" ø
 		inoremap Ø <Esc>
-		vnoremap Ø <Esc>
-		" "ø"
 		inoremap ø <Esc>
+		vnoremap Ø <Esc>
 		vnoremap ø <Esc>
-		" Don't know why <Esc> mapping in command mode seems to produce <Enter>
-		" Use <C-c> instead.
-		cmap ø <C-c>
-		cmap Ø <C-c>
-		" Map "æ" to delete
-		inoremap æ <delete>
-		"
+		" cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
+		cnoremap Ø <C-c>
+		cnoremap ø <C-c>
+		" Cancel search highlight
 		nnoremap <silent> ø :noh<return><esc>
 		nnoremap <silent> Ø :noh<return><esc>
-		if s:is_startup
-			let s:is_startup = 0
-		else
-			echo "Norwegian keys {ø,æ} mapped to {esc, del}."
-		endif
+
+		" æ
+		inoremap æ <delete>
+		inoremap Æ <delete>
+        " Avoid common error of typing :wq and then wanting to cancel with `ø` but
+        " typing `æ` instead, sometimes writing files called `æ`.
+        cnoremap Æ <delete>
+        cnoremap æ <delete>
+        " cnoremap æ <C-c>
+
 	else
 		iunmap Ø
 		iunmap ø
-		unmap ø
-		unmap Ø
+		vunmap Ø
+		vunmap ø
 		cunmap Ø
 		cunmap ø
+		nunmap Ø
+		nunmap ø
+
+		iunmap Æ
 		iunmap æ
-		if s:is_startup
-			let s:is_startup = 0
-		else
-			echo "Norwegian keys available as usual."
-		endif
+		cunmap Æ
+		cunmap æ
 	endif
 
-	let s:mappingsState = !s:mappingsState
+    " Echo
+    if !a:silence
+        if s:is_on
+            echo "Norwegian keys {ø,æ} mapped to {esc, del}."
+        else
+			echo "Norwegian keys available as usual."
+        endif
+    endif
+
+    " Toggle state
+	let s:is_on = !s:is_on
 endfunction
 
-command! NRK call ToggleNorwegianKeys()
+command! NRK call ToggleNorwegianKeys(1)
 NRK
