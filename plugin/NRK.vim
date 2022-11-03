@@ -24,6 +24,19 @@ function! ToggleNorwegianKeys(silence)
         cnoremap æ <delete>
         " cnoremap æ <C-c>
 
+        " Workarounds
+		inoremap ´Ø Ø
+		inoremap ´ø ø
+		vnoremap ´Ø Ø
+		vnoremap ´ø ø
+		cnoremap ´Ø Ø
+		cnoremap ´ø ø
+
+		inoremap ´æ æ
+		inoremap ´Æ Æ
+        cnoremap ´Æ Æ
+        cnoremap ´æ æ
+
 	else
 		iunmap Ø
 		iunmap ø
