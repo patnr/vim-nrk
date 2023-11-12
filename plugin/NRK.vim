@@ -11,9 +11,6 @@ function! ToggleNorwegianKeys(silence)
 		" cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
 		cnoremap Ø <C-c>
 		cnoremap ø <C-c>
-		" Cancel search highlight
-		nnoremap <silent> ø :noh<return><esc>
-		nnoremap <silent> Ø :noh<return><esc>
 
 		" æ
 		inoremap æ <delete>
