@@ -6,6 +6,8 @@ function! ToggleNorwegianKeys(silence)
     " ø
     inoremap Ø <Esc>
     inoremap ø <Esc>
+    tnoremap Ø <Esc>
+    tnoremap ø <Esc>
     vnoremap Ø <Esc>
     vnoremap ø <Esc>
     " cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
@@ -15,6 +17,8 @@ function! ToggleNorwegianKeys(silence)
     " æ
     inoremap æ <delete>
     inoremap Æ <delete>
+    tnoremap æ <delete>
+    tnoremap Æ <delete>
     " Avoid common error of typing :wq and then wanting to cancel with `ø` but
     " typing `æ` instead, sometimes writing files called `æ`.
     cnoremap Æ <delete>
@@ -24,6 +28,8 @@ function! ToggleNorwegianKeys(silence)
     " Workarounds
     inoremap ´Ø Ø
     inoremap ´ø ø
+    tnoremap ´Ø Ø
+    tnoremap ´ø ø
     vnoremap ´Ø Ø
     vnoremap ´ø ø
     cnoremap ´Ø Ø
@@ -31,12 +37,16 @@ function! ToggleNorwegianKeys(silence)
 
     inoremap ´æ æ
     inoremap ´Æ Æ
+    tnoremap ´æ æ
+    tnoremap ´Æ Æ
     cnoremap ´Æ Æ
     cnoremap ´æ æ
 
   else
     iunmap Ø
     iunmap ø
+    tunmap Ø
+    tunmap ø
     vunmap Ø
     vunmap ø
     cunmap Ø
@@ -46,6 +56,8 @@ function! ToggleNorwegianKeys(silence)
 
     iunmap Æ
     iunmap æ
+    tunmap Æ
+    tunmap æ
     cunmap Æ
     cunmap æ
   endif
