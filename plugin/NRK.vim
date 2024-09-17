@@ -25,22 +25,23 @@ function! ToggleNorwegianKeys(silence)
     cnoremap æ <delete>
     " cnoremap æ <C-c>
 
+    " NB: dont use these (inconvenient since ´ is deadkey) -- simply use <C-ø>
     " Workarounds
-    inoremap ´Ø Ø
-    inoremap ´ø ø
-    tnoremap ´Ø Ø
-    tnoremap ´ø ø
-    vnoremap ´Ø Ø
-    vnoremap ´ø ø
-    cnoremap ´Ø Ø
-    cnoremap ´ø ø
-
-    inoremap ´æ æ
-    inoremap ´Æ Æ
-    tnoremap ´æ æ
-    tnoremap ´Æ Æ
-    cnoremap ´Æ Æ
-    cnoremap ´æ æ
+    " inoremap ´Ø Ø
+    " inoremap ´ø ø
+    " tnoremap ´Ø Ø
+    " tnoremap ´ø ø
+    " vnoremap ´Ø Ø
+    " vnoremap ´ø ø
+    " cnoremap ´Ø Ø
+    " cnoremap ´ø ø
+    "
+    " inoremap ´æ æ
+    " inoremap ´Æ Æ
+    " tnoremap ´æ æ
+    " tnoremap ´Æ Æ
+    " cnoremap ´Æ Æ
+    " cnoremap ´æ æ
 
   else
     iunmap Ø
