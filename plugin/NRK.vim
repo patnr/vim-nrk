@@ -4,15 +4,21 @@ function! ToggleNorwegianKeys(silence)
   " Toggle keys
   if s:is_on
     " ø
-    inoremap Ø <Esc>
-    inoremap ø <Esc>
-    tnoremap Ø <Esc>
-    tnoremap ø <Esc>
+    noremap Ø <Esc>
+    noremap ø <Esc>
+    noremap! Ø <Esc>
+    noremap! ø <Esc>
+    " These vmaps _sometimes_ help to cancel Select mode,
+    " although this should already be included by the previous noremaps
     vnoremap Ø <Esc>
     vnoremap ø <Esc>
     " cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
     cnoremap Ø <C-c>
     cnoremap ø <C-c>
+
+    " Also cancel search highlight
+    nnoremap <silent> ø :noh<return><esc>
+    nnoremap <silent> Ø :noh<return><esc>
 
     " æ
     inoremap æ <delete>
@@ -44,16 +50,16 @@ function! ToggleNorwegianKeys(silence)
     " cnoremap ´æ æ
 
   else
-    iunmap Ø
-    iunmap ø
-    tunmap Ø
-    tunmap ø
+    unmap Ø
+    unmap ø
+    unmap! Ø
+    unmap! ø
     vunmap Ø
     vunmap ø
+    nunmap ø
+    nunmap Ø
     cunmap Ø
     cunmap ø
-    nunmap Ø
-    nunmap ø
 
     iunmap Æ
     iunmap æ
