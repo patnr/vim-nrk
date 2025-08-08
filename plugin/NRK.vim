@@ -12,6 +12,8 @@ function! ToggleNorwegianKeys(silence)
     " although this should already be included by the previous noremaps
     vnoremap Ø <Esc>
     vnoremap ø <Esc>
+    xnoremap Ø <Esc>
+    xnoremap ø <Esc>
     " cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
     cnoremap Ø <C-c>
     cnoremap ø <C-c>
@@ -56,6 +58,8 @@ function! ToggleNorwegianKeys(silence)
     unmap! ø
     vunmap Ø
     vunmap ø
+    xunmap Ø
+    xunmap ø
     nunmap ø
     nunmap Ø
     cunmap Ø
