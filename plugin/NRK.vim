@@ -8,12 +8,12 @@ function! ToggleNorwegianKeys(silence)
     noremap ø <Esc>
     noremap! Ø <Esc>
     noremap! ø <Esc>
-    " These vmaps _sometimes_ help to cancel Select mode,
+    " These _sometimes_ help to cancel Select mode,
     " although this should already be included by the previous noremaps
-    vnoremap Ø <Esc>
-    vnoremap ø <Esc>
-    xnoremap Ø <Esc>
-    xnoremap ø <Esc>
+    " vnoremap Ø <Esc>
+    " vnoremap ø <Esc>
+    " xnoremap Ø <Esc>
+    " xnoremap ø <Esc>
     " cmap to <Esc> seems to produce <CR>. Use <C-c> instead.
     cnoremap Ø <C-c>
     cnoremap ø <C-c>
@@ -33,8 +33,8 @@ function! ToggleNorwegianKeys(silence)
     cnoremap æ <delete>
     " cnoremap æ <C-c>
 
-    " NB: dont use these (inconvenient since ´ is deadkey) -- simply use <C-ø>
     " Workarounds
+    " NB: dont use these (inconvenient since ´ is deadkey) -- simply use <C-ø>
     " inoremap ´Ø Ø
     " inoremap ´ø ø
     " tnoremap ´Ø Ø
@@ -56,10 +56,10 @@ function! ToggleNorwegianKeys(silence)
     unmap ø
     unmap! Ø
     unmap! ø
-    vunmap Ø
-    vunmap ø
-    xunmap Ø
-    xunmap ø
+    " vunmap Ø
+    " vunmap ø
+    " xunmap Ø
+    " xunmap ø
     nunmap ø
     nunmap Ø
     cunmap Ø
